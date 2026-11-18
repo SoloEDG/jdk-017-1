@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "typecheck": "vue-tsc --noEmit",
+    "test": "node tests/run-tests.mjs",
+    "test:e2e": "npm run build && node tests/e2e/run-e2e.mjs",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0"
   },
@@ -16,6 +18,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.0",
     "@vue/compiler-sfc": "^3.5.0",
+    "playwright-core": "^1.65.1",
     "typescript": "~5.7.3",
     "vite": "^6.0.0",
     "vue-tsc": "^2.2.0"

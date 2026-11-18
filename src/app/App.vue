@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Orbit, ArrowUpRight, Camera, ChevronRight } from "lucide-vue-next";
+import { ProjectPanel } from "../features/project";
 import { AssetPanel } from "../features/asset";
 import { ProjectionPanel } from "../features/projection";
 import { ViewportPanel, ViewControls } from "../features/viewport";
@@ -7,6 +8,8 @@ import { EdgePanel } from "../features/edge";
 import { ExportPanel } from "../features/export";
 import { useStudio } from "./useStudio";
 const doc = useStudio();
+// 供自动化测试与调试读取工作区状态
+(window as unknown as { __orbitStudio: unknown }).__orbitStudio = doc;
 </script>
 <template>
   <div class="workspace">
@@ -24,12 +27,12 @@ const doc = useStudio();
     </header>
     <div class="breadcrumb">
       <Camera :size="14" /><span>创作空间</span
-      ><ChevronRight :size="13" /><strong>未命名的星球</strong
+      ><ChevronRight :size="13" /><strong>{{ doc.name }}</strong
       ><span class="local-tag">本地处理 · 照片无需上传</span>
     </div>
     <div class="studio-grid">
       <aside class="left-sidebar">
-        <AssetPanel :doc="doc" /><ProjectionPanel :doc="doc" />
+        <ProjectPanel :doc="doc" /><AssetPanel :doc="doc" /><ProjectionPanel :doc="doc" />
         <div class="sidebar-note">
           <span>THE WORLD, REIMAGINED.</span>
           <p>把远方，装进一颗星球。</p>

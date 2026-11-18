@@ -6,14 +6,20 @@ import { useAssets } from "../model/useAssets";
 const props = defineProps<{ doc: StudioDocument }>();
 const { load, busy, error } = useAssets(props.doc);
 const input = ref<HTMLInputElement>();
+function pick(f?: File) {
+  if (!f) return;
+  if (/\.orbit$/i.test(f.name)) {
+    error.value = "这是 ORBIT 工程文件，请使用上方「00 / 工程文件」面板打开";
+    return;
+  }
+  void load(f);
+}
 function choose(e: Event) {
-  const f = (e.target as HTMLInputElement).files?.[0];
-  if (f) void load(f);
+  pick((e.target as HTMLInputElement).files?.[0]);
   (e.target as HTMLInputElement).value = "";
 }
 function drop(e: DragEvent) {
-  const f = e.dataTransfer?.files[0];
-  if (f) void load(f);
+  pick(e.dataTransfer?.files[0]);
 }
 onMounted(() => load());
 </script>

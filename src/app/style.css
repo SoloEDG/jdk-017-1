@@ -605,6 +605,128 @@ footer b {
   color: #bbc1b6;
   margin-left: 5px;
 }
+.text-input {
+  width: 100%;
+  border: 1px solid #e2e7dd;
+  background: #fafcf8;
+  border-radius: 6px;
+  padding: 10px 9px;
+  color: #4c5a4e;
+  font-size: 11px;
+  outline-color: #5b8a65;
+  margin-bottom: 6px;
+}
+.open-divider {
+  border-top: 1px dashed #e2e8de;
+  margin: 18px 0 14px;
+}
+.open-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 10px;
+  border: 1px dashed #b8cdbb;
+  border-radius: 7px;
+  background: #f7faf6;
+  color: #4f8060;
+  font-size: 11px;
+  font-weight: 500;
+}
+.open-button:hover {
+  background: #edf6ed;
+}
+.open-result {
+  margin-top: 14px;
+  border: 1px solid #e5e8e3;
+  border-radius: 8px;
+  background: #fcfdfb;
+  padding: 14px;
+}
+.problem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px dashed #e7ebe3;
+  color: #8a6d3b;
+}
+.problem svg {
+  flex: none;
+  color: #b75240;
+}
+.problem > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.problem strong {
+  font-size: 10px;
+  font-weight: 500;
+  color: #5d6a58;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.problem span {
+  font-size: 9px;
+  color: #99a198;
+  line-height: 1.6;
+}
+.rebind-button {
+  flex: none;
+  border: 1px solid #cfdccf;
+  border-radius: 5px;
+  padding: 6px 9px;
+  font-size: 9px;
+  color: #4f8060;
+  background: #fff;
+}
+.preview-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.preview-card img {
+  width: 72px;
+  height: 72px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #e5e8e3;
+  background:
+    repeating-conic-gradient(#eef1ea 0% 25%, #fdfefc 0% 50%) 0 0 / 12px 12px;
+}
+.preview-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.preview-card strong {
+  font-size: 11px;
+  font-weight: 600;
+  color: #47564c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.preview-card span {
+  font-size: 9px;
+  color: #99a198;
+}
+.substitution {
+  font-size: 9px;
+  color: #8a6d3b;
+  background: #fdf6e7;
+  border: 1px solid #f0e2bd;
+  border-radius: 6px;
+  padding: 8px 10px;
+  line-height: 1.7;
+  margin: 10px 0 0;
+}
 @media (min-width: 1500px) {
   .studio-grid {
     grid-template-columns: 300px minmax(420px, 1fr) 290px;

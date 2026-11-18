@@ -24,6 +24,12 @@ export async function decodeAsset(blob: Blob, name: string): Promise<Asset> {
       height: canvas.height,
       data,
       thumbnail: thumb.toDataURL("image/jpeg", 0.7),
+      source: {
+        bytes: await blob.arrayBuffer(),
+        mime: blob.type || "application/octet-stream",
+        width: bitmap.width,
+        height: bitmap.height,
+      },
     };
   } finally {
     bitmap.close();
